@@ -1,7 +1,6 @@
 pp "howdy"
 
-# I've already created a string variable above: 
-
+# I've already created a string variable above: pirate_weather_api_key
 # It contains sensitive credentials that hackers would love to steal so it is hidden for security reasons.
 
 require "http"
@@ -9,7 +8,6 @@ require "http"
 pirate_weather_api_key = ENV.fetch("PIRATE_WEATHER_KEY")
 
 # Assemble the full URL string by adding the first part, the API token, and the last part together
-
 pirate_weather_url = "https://api.pirateweather.net/forecast/" + pirate_weather_api_key + "/41.8887,-87.6355"
 
 # Place a GET request to the URL
@@ -24,3 +22,8 @@ currently_hash = parsed_response.fetch("currently")
 current_temp = currently_hash.fetch("temperature")
 
 puts "The current temperature is " + current_temp.to_s + "."
+
+# Take Lat/long
+#
+
+puts "Latitude is: " + parsed_response.fetch("latitude").to_s + ", Longitude is: " + parsed_response.fetch("longitude").to_s
