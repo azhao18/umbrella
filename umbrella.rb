@@ -31,16 +31,17 @@ puts "Latitude is: " + parsed_response.fetch("latitude").to_s + ", Longitude is:
 
 
 #### raghu answer
+p parsed_response
 results = parsed_response.fetch("results")
+p results
+#first_result = results.at(0)
 
-first_result = results.at(0)
+#geo = first_result.fetch("geometry")
 
-geo = first_result.fetch("geometry")
+#loc = geo.fetch("location")
 
-loc = geo.fetch("location")
-
-pp latitude = loc.fetch("lat")
-pp longitude = loc.fetch("lng")
+#pp latitude = loc.fetch("lat")
+#pp longitude = loc.fetch("lng")
 #### raghu answer
 
 # Temperature
