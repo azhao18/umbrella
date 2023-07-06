@@ -27,3 +27,20 @@ puts "The current temperature is " + current_temp.to_s + "."
 #
 
 puts "Latitude is: " + parsed_response.fetch("latitude").to_s + ", Longitude is: " + parsed_response.fetch("longitude").to_s
+#p parsed_response.fetch("hourly")
+
+
+#### raghu answer
+results = parsed_response.fetch("results")
+
+first_result = results.at(0)
+
+geo = first_result.fetch("geometry")
+
+loc = geo.fetch("location")
+
+pp latitude = loc.fetch("lat")
+pp longitude = loc.fetch("lng")
+#### raghu answer
+
+# Temperature
